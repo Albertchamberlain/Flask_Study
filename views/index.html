@@ -12,7 +12,38 @@
             <h1 style="color:red;">Welcome to the Home Page</h1>
             <img src="/static/img/1.jfif" alt="">
             <img src="{{_url_for('static', filename = 'img/1.jfif')}}" alt="">
+            {{user}}
+            {{data}}
+            {{userinfo}}
+
+            {% if user == 'amos'%}
+                <h1 style="color: blue;">amos</h1>>
+            {% else %}
+                <h1 style="color:aqua">normal</h1>
+            {% endif %}
         </div>
     </div>
+</div>
+<hr>
+{% for item in data %}
+    <ul style="color:red;">{{item}}
+{% endfor %}
+</ul>
+<hr>
+    {%for username,age in userinfo.items() %}
+        <ul style="color:blue;">
+            <li>{{username}}</li>
+            <li>{{age}}</li>
+        </ul>
+    {% endfor %} 
+    {{user | upper}} 
+</hr>
+{{ userinfo['username'] }}
+{{userinfo['age']}}
+{{userinfo['email']}}
 
+{{userinfo.username}}
+{{userinfo.age}}
+{{userinfo.email}}
+</body>
 </html> 
